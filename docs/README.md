@@ -1,4 +1,4 @@
-﻿# `Chizl.ColorExtension` ![`logo`](https://github.com/gavin1970/Chizl.ColorExtension/blob/master/Chizl.ColorExtension/docs/Chizl.ColorExtension.png)
+﻿# `Chizl.ColorExtension` ![`logo`](https://github.com/gavin1970/Chizl.ColorExtension/blob/master/docs/ChizlColorExtension.png)
 In the works, no where near complete.  This is part of my <a href="https://www.colors.dev">colors.dev</a> project.
 <hr/>
 
