@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="HSVB">
+				<summary>
+						The HSV (Hue, Saturation, Value) aka HSB (Hue, Saturation, Brightness)<br/>
+						HSV is also sometimes referred to as HSB, where B stands for Brightness instead of Value, but the meaning and value is the same.<br/><br/>
+						This color model is a way of representing colors that is more intuitive for human perception than the RGB (Red, Green, Blue) model.<br/>
+						HSV divides color into three components:<br/>
+						Hue, which represents the color's base, like red, green, or blue.  The value represented the angle or degree on a RGB color wheel, ranging from 0.00 to 360.00 degrees.<br/>
+						Saturation, which indicates the of purity or intensity percentage (%) of the color.  A fully saturated color will be a pure, vibrant shade, while a lower saturation will make the color appear muted or grayscale.<br/>
+						Value aka Brightness, represents the brightness percentage (%) of the color, ranging from black(0%) to white(100%).<br/>
+						HSV is often represented as a cylinder or cone, with:<br/>
+						- Hue: around the circular base,<br/>
+						- Saturation: as radius from center to edge,<br/>
+						- Value/Brightness, as height from bottom (black) to top (brightest color).<br/>
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="HSVBInt">
+								<summary>
+										HSV(int decValue) or HSB(int decValue):<br/>
+										RGB decimal value from or to create Color.<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="HSVBColor">
+								<summary>
+										HSV(System.Drawing.Color) or HSB(System.Drawing.Color):<br/>
+										Color object to build RGB decimal value from or to create Color.<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="HSVBDoubles">
+								<summary>
+										HSV(double hue, double saturation, double value) or HSB(double hue, double saturation, double value):<br/>
+										Hue, Saturation, and Value/Brightness values for Color object.<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<properties>
+						<property name="HSVB_Saturation">
+								<summary>
+										Definition: The purity or intensity percentage (%) of the color.<br/>
+										Represents: How much the color deviates from a neutral gray at the same brightness.<br/>
+										Range: 0.00% (completely unsaturated, gray) to 100.00% (fully saturated, pure hue).<br/>
+										Behavior:<br/>
+										- Low Saturation: Colors appear grayish, pastel, or washed out.<br/>
+										- High Saturation: Colors are vivid, rich, and intense.<br/>
+										Interpretation: Saturation in HSV indicates how "pure" the hue is.
+										A saturation of 0% means there's no colorfulness (the result is a shade of gray).
+										As saturation increases, the hue becomes more prominent.<br/>
+										Note: HSV and HSL define saturation differently. In HSV, saturation is based on the distance
+										from the center of the HSV cylinder, whereas in HSL it’s based on chroma relative to lightness.
+								</summary>
+								<returns>
+										(double)<br/>
+										- Min Value: 0.00<br/>
+										- Max Value: 100.00<br/>
+								</returns>
+						</property>
+						<property name="HSVB_Value">
+								<summary>
+										Definition: The brightness or luminosity of a color.<br/>
+										Representation: Represents how much light is present in a color, from dark (black) to fully lit (pure color).<br/>
+										Range: 0.00% (black) to 100.00% (full brightness).<br/>
+										Interpretation:<br/>
+										- Low Value: The color appears darker or shadowed.<br/>
+										- High Value: The color appears brighter and more intense.<br/>
+										Note: Affects how "light" or "dark" a color appears but does not consider white—only black is mixed in at low values.<br/>
+										Also Note: HSV aka HSB, where B stands for Brightness instead of Value, but the meaning and value is the same.
+								</summary>
+								<returns>
+										(double)<br/>
+										- Min Value: 0.00<br/>
+										- Max Value: 100.00<br/>
+								</returns>
+						</property>
+						<property name="HSVB_RawValue">
+								<summary>
+										Definition: The brightness or luminosity of a color in the HSV model.<br/>
+										Representation: Represents how much light is present in a color, from dark (black) to fully lit (pure color).<br/>
+										Range: 0.00% (black) to 100.00% (full brightness).<br/>
+										Interpretation:<br/>
+										- Low Value: The color appears darker or shadowed.<br/>
+										- High Value: The color appears brighter and more intense.<br/>
+										Note: Affects how "light" or "dark" a color appears but does not consider white—only black is mixed in at low values.<br/>
+										Also Note: HSV is also sometimes referred to as HSB, where B stands for Brightness instead of Value, but the meaning and value is the exact same.
+								</summary>
+								<returns>
+										(double)<br/>
+										- Min Value: 0.00<br/>
+										- Max Value: 100.00<br/>
+								</returns>
+						</property>
+				
+		</properties>
+		</class>
+</extradoc>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="HEX">
+				<summary>
+						Hex class handling color hex for R, G, and B.  Alpha or transparency is not included or used.
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="HEXInt">
+								<summary>
+										HEX(int decValue):<br/>
+										RGB decimal value representing color.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="HEXColor">
+								<summary>
+										HEX(Color clr):<br/>
+										HEX can except color object.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="HEXString">
+								<summary>
+										HEX(string hex):<br/>
+										HEX can except color HEXv3 #C0C, HEXv6 #CC00CC, or HEXv8 #FFCC00CC.
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<methods>
+						<method name="ToColor">
+								<summary>
+										ToColor(optional bool ignoreAlpha):<br/>>
+										If ignoreAlpha is True, the color will return based on ToRgbHex property value.<br/>
+										If ignoreAlpha is False, the color will return based on ToArgbHex property value.
+								</summary>
+								<returns>
+										Color object
+								</returns>
+						</method>
+				</methods>
+				<properties>
+						<property name="ToRgb">
+								<summary>
+										ToRgb, decimal values created from the ToRgbHex property value.
+								</summary>
+								<returns>
+										(int)<br/>
+										Integer values related to the ToRgbHex property value.
+								</returns>
+						</property>
+						<property name="ToArgb">
+								<summary>
+										ToArgb, decimal values created from the ToArgbHex property value.
+								</summary>
+								<returns>
+										(int)<br/>
+										Integer values related to the ToArgbHex property value.
+								</returns>
+						</property>
+						<property name="AHex">
+								<summary>
+										AHex,
+										Default: 'FF' - When string hex or decimal passed in, without Alpha, default will be set to 'FF'.
+								</summary>
+								<returns>
+										(string)<br/>
+										"FF"
+								</returns>
+						</property>
+						<property name="A">
+								<summary>
+										A,
+										Default: '255' - When string hex or decimal passed in, without Alpha, default will be set to '255'.
+								</summary>
+								<returns>
+										(byte)<br/>>
+										0-255 byte value specific to Alpha/Transparency (AHex) string value.<br/>
+								</returns>
+						</property>
+						<property name="RHex">
+								<summary>
+										RHex, 2 byte hexidecimal value for Red.
+								</summary>
+								<returns>
+										(string)<br/>
+										"FF"
+								</returns>
+						</property>
+						<property name="R">
+								<summary>
+										R, Byte value for Red.
+								</summary>
+								<returns>
+										(byte)<br/>>
+										0-255 byte value specific to Red (RHex) string value.<br/>
+								</returns>
+						</property>
+						<property name="GHex">
+								<summary>
+										GHex, 2 byte hexidecimal value for Green.
+								</summary>
+								<returns>
+										(string)<br/>
+										"FF"
+								</returns>
+						</property>
+						<property name="G">
+								<summary>
+										G, Byte value for Green.
+								</summary>
+								<returns>
+										(byte)<br/>>
+										0-255 byte value specific to Green (GHex) string value.<br/>
+								</returns>
+						</property>
+						<property name="BHex">
+								<summary>
+										BHex, 2 byte hexidecimal value for Blue.
+								</summary>
+								<returns>
+										(string)<br/>
+										"FF"
+								</returns>
+						</property>
+						<property name="B">
+								<summary>
+										B, Byte value for Blue.
+								</summary>
+								<returns>
+										(byte)<br/>>
+										0-255 byte value specific to Blue BHex value.<br/>
+								</returns>
+						</property>
+						<property name="IsWebSafeColor">
+								<summary>
+										IsWebSafeColor, evaluates if color is in the WebSafe216 and/or WebSafe16 color palette.
+								</summary>
+								<returns>
+										(bool)<br/>
+										True: Color is part of WebSafe216 and/or WebSafe16 color palette.<br/>
+										False: Is not in either palette.
+								</returns>
+						</property>
+						<property name="IsWebSafe216Color">
+								<summary>
+										IsWebSafe216Color, evaluates if color is in the WebSafe216 color palette.
+								</summary>
+								<returns>
+										(bool)<br/>
+										True: Color is part of WebSafe216 color palette.<br/>
+										False: Is not in the palette.
+								</returns>
+						</property>
+						<property name="IsWebSafe16Color">
+								<summary>
+										IsWebSafe16Color, evaluates if color is in the WebSafe16 color palette.
+								</summary>
+								<returns>
+										(bool)<br/>
+										True: Color is part of WebSafe16 color palette.<br/>
+										False: Is not in the palette.
+								</returns>
+						</property>
+						<property name="ToRgbHex">
+								<summary>
+										ToRgbHex, creates string based on $"#{Color.R:X2}{Color.G:X2}{Color.B:X2}"
+								</summary>
+								<returns>
+										(uppercased string)<br/>
+										e.g. "#9F9F9F"
+								</returns>
+						</property>
+						<property name="ToArgbHex">
+								<summary>
+										ToArgbHex, creates string based on $"#{Color.A:X2}{Color.R:X2}{Color.G:X2}{Color.B:X2}"
+								</summary>
+								<returns>
+										(uppercased string)<br/>
+										e.g. "#FF9F9F9F"
+								</returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

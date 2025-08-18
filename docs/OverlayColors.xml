@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="OverlayColors">
+				<summary>
+						OverlayColors, taking a foreground color with transparency and overlay on top of a solid background color.
+						This will result in a new visual RGB color and the results can be found in the MergedColor property.<br/><br/>
+
+						Understanding the Formula<br/>
+						The key is to use the alpha value from the foreground to blend the foreground and background colors.  The formula for each color channel (Red, Green, Blue) is the same:<br/>
+						Result = (ForegroundAlpha * ForegroundColor) + ((1 - ForegroundAlpha) * BackgroundColor)<br/><br/>
+
+						Understanding the Values<br/>
+						Foreground: (Af, Rf, Gf, Bf)  (Alpha, Red, Green, Blue)  Each component (R, G, B) is 0-255.  Alpha (Af) is 0.0 to 1.0<br/>
+						Background: (Rb, Gb, Bb)      (Red, Green, Blue)  Each component is 0-255.<br/>
+						Result: (Rr, Gr, Br)      (Result Red, Result Green, Result Blue)  Each component will be 0-255<br/>
+
+						The Calculation<br/>
+						The formula is the same, but we need to make sure our values are correctly interpreted.  Crucially, Alpha needs to be 0.0 to 1.0<br/>
+						Rr = (Af * Rf) + ((1 - Af) * Rb)<br/>
+						Gr = (Af * Gf) + ((1 - Af) * Gb)<br/>
+						Br = (Af * Bf) + ((1 - Af) * Bb)<br/><br/>
+
+						Important:  Alpha Normalization<br/>
+						The key is that your alpha value  Af must be a value between 0 and 1.  If your alpha is coming in as a byte (0-255), you must divide it by 255.0  before using it in the calculation.<br/><br/>
+
+						Example:<br/>
+						Foreground (ARGB): (128, 255, 0, 0)  (Red, 50% transparent)<br/>
+						Background (RGB): (0, 0, 255)    (Blue)<br/><br/>
+
+						Calculation:<br/>
+						Normalize Alpha:<br/>
+						Af = 128 / 255.0  ≈ 0.502<br/>
+						Rr = (0.502 * 255) + ((1 - 0.502) * 0) = 128<br/>
+						Gr = (0.502 * 0)   + ((1 - 0.502) * 0) = 0<br/>
+						Br = (0.502 * 0)   + ((1 - 0.502) * 255) = 127.96 ≈ Rounded: 128<br/><br/>
+
+						RGB Result: "HEX: #FF7F0080, ARGB: (255, 127, 0, 128)" - Which is a purple color.
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="ColorColor">
+								<summary>
+										Parameters:<br/>
+										- fgColor (Color) - Foreground color with a transparency that would overlay on top of background color.<br/>
+										- bgColor (Color) - Background color to be overlayed by the foreground color.  If this background color has any transparency, it will be ignored.
+										<example>
+												<code>
+														var fgColor = Color.FromArgb(127, 255, 0, 0);<br/>
+														var bgColor = Color.FromArgb(255, 0, 128, 0);<br/>
+														var blendedColor = new OverlayColors(fgColor, bgColor);<br/>
+														Console.WriteLine(blendedColor.MergedColor);<br/>
+														Results: Color [A=255, R=127, G=64, B=0]
+												</code>
+										</example>
+								</summary>
+						</interface>
+				</interfaces>
+				<properties>
+						<property name="Empty">
+								<summary>
+										Empty, creates an empty OverlayColors object.  IsEmpty will be true and IsValid will be false.
+								</summary>
+						</property>
+						<property name="IsEmpty">
+								<summary>
+										IsEmpty, validates the current OverlayColors object isn't an empty object.
+								</summary>
+						</property>
+						<property name="FGColor">
+								<summary>
+										IsEmpty, validates the current OverlayColors object isn't an empty object.
+								</summary>
+						</property>
+						<property name="BGColor">
+								<summary>
+										IsEmpty, validates the current OverlayColors object isn't an empty object.
+								</summary>
+						</property>
+						<property name="MergedColor">
+								<summary>
+										IsEmpty, validates the current OverlayColors object isn't an empty object.
+								</summary>
+						</property>
+						<property name="ValueString">
+								<summary>
+										IsEmpty, validates the current OverlayColors object isn't an empty object.
+								</summary>
+						</property>
+				</properties>
+		</class>
+</extradoc>

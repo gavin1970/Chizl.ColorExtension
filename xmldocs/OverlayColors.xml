@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="OverlayColors">
+    <returns />
+    <interfaces>
+      <interface name="OverlayColorsOther">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+      <interface name="OverlayColorsColorColor">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+    </interfaces>
+    <methods>
+      <method name="Equals">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="GetHashCode">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="ToString">
+        <summary></summary>
+        <returns></returns>
+      </method>
+    </methods>
+    <properties>
+      <property name="Empty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="IsEmpty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="FGColor">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="BGColor">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="MergedColor">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="ValueStringV6">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="ValueStringV8">
+        <summary></summary>
+        <returns></returns>
+      </property>
+    </properties>
+  </class>
+</extradoc>

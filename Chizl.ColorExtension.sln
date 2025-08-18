@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chizl.ColorExtension", "Chizl.ColorExtension.csproj", "{158D1A9C-AB63-42FB-BE62-F55C093FFF22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET8Demo", "NET8Demo\NET8Demo.csproj", "{DA62BCE4-AF44-4000-B397-DA56463CC02A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETFrameworkDemo", "NETFrameworkDemo\NETFrameworkDemo.csproj", "{5435A141-C4E8-4305-9581-49A32A89EF08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{158D1A9C-AB63-42FB-BE62-F55C093FFF22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158D1A9C-AB63-42FB-BE62-F55C093FFF22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158D1A9C-AB63-42FB-BE62-F55C093FFF22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158D1A9C-AB63-42FB-BE62-F55C093FFF22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA62BCE4-AF44-4000-B397-DA56463CC02A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA62BCE4-AF44-4000-B397-DA56463CC02A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA62BCE4-AF44-4000-B397-DA56463CC02A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA62BCE4-AF44-4000-B397-DA56463CC02A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5435A141-C4E8-4305-9581-49A32A89EF08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5435A141-C4E8-4305-9581-49A32A89EF08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5435A141-C4E8-4305-9581-49A32A89EF08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5435A141-C4E8-4305-9581-49A32A89EF08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFDA9D02-056D-423F-A46E-98F0A4C5F579}
+	EndGlobalSection
+EndGlobal

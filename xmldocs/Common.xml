@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="Common">
+    <returns />
+    <methods>
+      <method name="GetCachedColorList">
+        <summary>Used to pull ColorDetails from cache if exists.</summary>
+        <returns>true if successfully found, false if not found</returns>
+        <params>
+          <param name="color">
+            <summary>Color to look for</summary>
+          </param>
+          <param name="colorDetails">
+            <summary>Cached version if exists</summary>
+          </param>
+        </params>
+      </method>
+      <method name="AddCachedColorList">
+        <summary>Add ColorDetails object to Cache if not already there.  if more than max in cached, removed the oldest cached object.</summary>
+        <returns></returns>
+        <params>
+          <param name="color">
+            <summary>ColorDetails object to cache</summary>
+          </param>
+        </params>
+      </method>
+      <method name="IsHex">
+        <summary>Uses Regex to validate if string as a whole is HexV8, HexV6, or HexV3, allowing # to be optional. &lt;br/&gt;  Pattern: "^([#]?([a-fA-F0-9]{8})|([a-fA-F0-9]{6})|([a-fA-F0-9]{3}))$"</summary>
+        <returns>(bool) &lt;br/&gt;  - true : is HEX &lt;br/&gt;  - false: is not HEX</returns>
+      </method>
+      <method name="CleanString">
+        <summary>Removes all ConsoleCommands and Escape Character Colors and Symbols</summary>
+        <returns></returns>
+      </method>
+      <method name="CleanAC">
+        <summary>Support for CleanString, based on colors and/or styles set to true.</summary>
+        <returns></returns>
+        <params>
+          <param name="msg">
+            <summary></summary>
+          </param>
+          <param name="token">
+            <summary></summary>
+          </param>
+        </params>
+      </method>
+      <method name="InterpolateDescriptor">
+        <summary>Use to query associated array of values to match up with names.</summary>
+        <returns>String found or "" if not found or empty value</returns>
+        <params>
+          <param name="value">
+            <summary>value to lookup</summary>
+          </param>
+          <param name="hsValueType">
+            <summary>value type to select array to use.</summary>
+          </param>
+          <param name="noSpaces">
+            <summary>to remove spaces on return or not.</summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetAsciiEscape">
+        <summary>Used to build foreground and or background colors Ascii Escape codes for consoles coloring.</summary>
+        <returns>Ascii Escape code for display or usage based on asString argument.</returns>
+        <params>
+          <param name="clr">
+            <summary>Color to build Ascii Escape codes from</summary>
+          </param>
+          <param name="isForeground">
+            <summary>This is required to build the correct Ascii Escape codes</summary>
+          </param>
+          <param name="asString">
+            <summary>true if used for displaying the codes.  false if you want them to be used for coloring. (Default: false)</summary>
+          </param>
+        </params>
+      </method>
+      <method name="CalcHue">
+        <summary>Yes this does the math to create the Hue intead of using Color.GetHue(). &lt;br/&gt;  This is because MS Color structure isn't 100% for example: &lt;br/&gt;  GetBrightness() returns HSL Lightness and GetSaturation returns HSL Saturation values instead of HSV as documented and commented within their structure. &lt;br/&gt;  As things change, this method guarantees correct values.</summary>
+        <returns>value rounded by set decimal points.</returns>
+        <params>
+          <param name="clr">
+            <summary>Color to get hue from.</summary>
+          </param>
+          <param name="decPoints">
+            <summary>(Optional) How many decimal points to round to. Only accepts 0-4. &lt;br/&gt; Default: 2</summary>
+          </param>
+        </params>
+      </method>
+      <method name="CalcSaturation">
+        <summary>Calculates both HSV and HSL Saturation.</summary>
+        <returns>(HSV.Saturation, HSL.Saturation)</returns>
+        <params>
+          <param name="clr">
+            <summary>Color to build saturation from.</summary>
+          </param>
+          <param name="decPoints">
+            <summary>(Optional) How many decimal points to round to. Only accepts 0-4. &lt;br/&gt; Default: 2</summary>
+          </param>
+        </params>
+      </method>
+      <method name="CalcBrightness">
+        <summary>Will calculate to build HSV/HSB Value/Brightness.</summary>
+        <returns>value rounded by set decimal points.</returns>
+        <params>
+          <param name="clr">
+            <summary>Color to get birghtness from.</summary>
+          </param>
+          <param name="decPoints">
+            <summary>(Optional) How many decimal points to round to. Only accepts 0-4. &lt;br/&gt; Default: 2</summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetToneModifier">
+        <summary>Creates a tone level name based on HSV/HSB Saturation and Brightness of the color passed in.</summary>
+        <returns>ToneRule object, with Modifier property as the name. &lt;br/&gt;  Also included 1 of 14 rule # and rule break down on how name was generated.</returns>
+        <params>
+          <param name="clr">
+            <summary>Color to get Tone information from.</summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetTemperatureModifier">
+        <summary>High level temperature string stating how this color is viewed.</summary>
+        <returns>String with name. Available return values: Hot, Warm, Neutral-Warm, Cool, Cold, Neutral-Cool</returns>
+        <params>
+          <param name="clr">
+            <summary>Color to get Temperature information from.</summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetComplementary">
+        <summary>Returns the color from the colorwheel 180 degree from itself.</summary>
+        <returns>new color 180 degrees from the color wheel</returns>
+        <params>
+          <param name="clr">
+            <summary>Color to get complementary color for</summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetMappedDictionary">
+        <summary></summary>
+        <returns></returns>
+      </method>
+    </methods>
+  </class>
+</extradoc>

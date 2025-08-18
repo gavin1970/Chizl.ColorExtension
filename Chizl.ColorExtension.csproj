@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+		<PropertyGroup>
+				<TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+				<ImplicitUsings>disable</ImplicitUsings>
+				<Nullable>disable</Nullable>
+				<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+				<OutputType>Library</OutputType>
+		</PropertyGroup>
+
+		<PropertyGroup>
+				<Title>Chizl.ColorExtension</Title>
+				<Description>Adding extensions to System.Drawing.Color object.</Description>
+				<Authors>Chizl</Authors>
+				<PackageId>Chizl.ColorExtension</PackageId>
+				<Company>colors.dev</Company>
+				<ApplicationIcon>docs\ChizlColorExtension.ico</ApplicationIcon>
+				<Copyright>© 2025 color.dev</Copyright>
+				<PackageTags>4bit;8bit;24bit;color;bit-level-convertion;ascii-escape;console-window;desktop-window;netstandard2.0;netstandard2.1;net47;net48;net6.0;net8.0;net9.0;no-external-dependancies</PackageTags>
+				<FileVersion>5.07.16.0144</FileVersion>
+				<Version>5.07.16.0</Version>
+				<AssemblyVersion>5.07.0.0</AssemblyVersion>
+				<NuGetAuditMode>all</NuGetAuditMode>
+				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+				<PackageReadmeFile>README.md</PackageReadmeFile>
+				<PackageIcon>ChizlColorExtension.png</PackageIcon>
+		</PropertyGroup>
+
+		<ItemGroup>
+		  <Compile Remove="NET8Demo\**" />
+		  <Compile Remove="NETFrameworkDemo\**" />
+		  <Compile Remove="packages\**" />
+		  <EmbeddedResource Remove="NET8Demo\**" />
+		  <EmbeddedResource Remove="NETFrameworkDemo\**" />
+		  <EmbeddedResource Remove="packages\**" />
+		  <None Remove="NET8Demo\**" />
+		  <None Remove="NETFrameworkDemo\**" />
+		  <None Remove="packages\**" />
+		</ItemGroup>
+
+		<ItemGroup>
+		  <None Remove="docs.zip" />
+		</ItemGroup>
+
+		<ItemGroup>
+				<None Include="docs\README.md" Pack="true" PackagePath="\" />
+				<None Include="docs\ChizlColorExtension.png" Pack="True" PackagePath="\" />
+				<None Include="docs\ChizlColorExtension.ico" Pack="true" PackagePath="\" />
+		</ItemGroup>
+
+		<ItemGroup>
+		  <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
+		</ItemGroup>
+
+		<ItemGroup>
+		  <Folder Include="xmldocs\" />
+		</ItemGroup>
+
+</Project>

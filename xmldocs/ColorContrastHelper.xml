@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="ColorContrastHelper">
+    <summary>Contrast Helper to help get level and get best color.</summary>
+    <returns />
+    <methods>
+      <method name="GetContrast">
+        <summary>Returns the color (black or white) that has the highest contrast ratio with the given background color,
+         along with the contrast ratio itself. You may optionally specify a minimum WCAG contrast ratio threshold.</summary>
+        <returns>True if contrast meets the minimum threshold, false otherwise</returns>
+        <params>
+          <param name="background">
+            <summary>Background color</summary>
+          </param>
+          <param name="bestContrastColor">
+            <summary>Returns black or white depending on best contrast</summary>
+          </param>
+          <param name="contrastRatio">
+            <summary>Returns the actual contrast ratio</summary>
+          </param>
+          <param name="minThreshold">
+            <summary>Optional minimum WCAG contrast ratio (default: 0)</summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetContrastLevel">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="ContrastRatio">
+        <summary>Returns the WCAG contrast ratio between two luminances.</summary>
+        <returns></returns>
+      </method>
+      <method name="RelativeLuminance">
+        <summary>Returns the relative luminance of a color (0–1).</summary>
+        <returns></returns>
+      </method>
+      <method name="ChannelLuminance">
+        <summary>Applies gamma correction to a single RGB channel (0–255).</summary>
+        <returns></returns>
+      </method>
+    </methods>
+  </class>
+</extradoc>

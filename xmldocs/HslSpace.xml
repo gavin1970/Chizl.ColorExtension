@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="HslSpace">
+    <returns />
+    <interfaces>
+      <interface name="HslSpaceOther">
+        <summary>Constructors with no parameters are not supported for netstandard2.0</summary>
+        <returns></returns>
+      </interface>
+      <interface name="HslSpaceInt">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+      <interface name="HslSpaceOtherOtherOther">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+      <interface name="HslSpaceColor">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+    </interfaces>
+    <methods>
+      <method name="Equals">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="GetHashCode">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="ToString">
+        <summary></summary>
+        <returns></returns>
+      </method>
+    </methods>
+    <properties>
+      <property name="Empty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="IsEmpty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Hue">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Saturation">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Lightness">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="ValueString">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="ValueRaw">
+        <summary></summary>
+        <returns></returns>
+      </property>
+    </properties>
+  </class>
+</extradoc>

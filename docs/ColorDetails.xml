@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="ColorDetails">
+				<summary>
+						???
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="ColorDetailsInt">
+								<summary>
+										RGB decimal value from Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="ColorDetailsColor">
+								<summary>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<properties>
+						<property name="???">
+								<summary>
+										???
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="???">
+								<summary>
+										???
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="???">
+								<summary>
+										???
+								</summary>
+								<returns></returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

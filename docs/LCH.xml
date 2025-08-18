@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="LCH">
+				<summary>
+						LCH is a color space that represents colors using three coordinates: Lightness, Chroma, and Hue. 
+						It's a cylindrical transformation of the CIELAB color space, meaning it uses polar coordinates (chroma and hue) instead of the Cartesian 
+						coordinates (a* and b*) of CIELAB. LCH is designed to be more perceptually uniform, meaning that changes in the coordinate values correspond 
+						more closely to how humans perceive color differences.<br/>
+						<br/>
+						LCH[99, 5, 199]: (Ex: Azure)<br/>
+						L (Lightness Percentage) = 99:<br/>
+						- This indicates that Azure is an extremely light color, very close to white. This aligns with its visual appearance as a pale blue.<br/>
+						- Something to understand, Lightness in LCh does not have the same values for the same color as HSL.<br/>
+						- Why you might ask?<br/>
+								- LCH lightness is like measuring brightness with a light meter: a particular value will always represent a similar perceived brightness, regardless of the color being measured.<br/>
+								- HSL lightness add white makes it lighter, adding black makes it darker, but the perceived brightness can vary drastically depending on the base color itself.<br/>
+						C (Chroma Percentage) = 5:<br/>
+						- This value signifies very low chroma or intensity. It means the color is not vivid or saturated, contributing to its soft and muted look. A chroma of 0 would be a pure gray.<br/>
+						h (Hue Angle) = 199:<br/>
+						- This angle places Azure in the blue-cyan region of the color wheel. Hue is an angle from 0 to 360 degrees, where blue is approximately 270 degrees and cyan is around 180 degrees. So, 199 degrees accurately reflects Azure as a light blue with a hint of cyan.<br/>
+						- LCH Hue values are derived from the CIELAB color space, which is based on human color perception and the XYZ reference color space.  HSL and HSV Hue values are derived from the RGB color cube.<br/>
+						- HSL's hue starts at pure red, while LCH's hue starts at a pinkish red, according to Zapier.<br/>
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="LCHInt">
+								<summary>
+										LCH(int decValue):<br/>
+										RGB decimal value from Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LCHColor">
+								<summary>
+										LCH(System.Drawing.Color):<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+		</class>
+</extradoc>

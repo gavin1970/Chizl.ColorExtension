@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="LUV">
+				<summary>
+						LUV is derived from the CIE 1931 XYZ color space through specific mathematical transformations.<br/>
+						LUV represents color using three components: L* (lightness), u* (chromaticity), and v* (chromaticity).<br/>
+						The L* value represents lightness, typically ranging from 0 to 100, where 0 is black and 100 is white.<br/>
+						The u* and v* components represent chromaticity, with u* indicating a red-green axis and v* indicating a blue-yellow axis.<br/>
+						<br/>
+						LAB and LUV (L*, a*, b*, u*, v*): These color spaces are derived from the XYZ space and are designed to be perceptually uniform,<br/>
+						meaning that the numerical distance between colors in these spaces corresponds more closely to the perceived difference in color<br/>
+						by the human eye than in the XYZ space.<br/>
+						<br/>
+						The L* value represents lightness, typically ranging from 0 to 100, where 0 is black and 100 is white.<br/>
+						The u* (green-red) and v* (blue-yellow) values in CIELUV represent chromaticity coordinates.<br/>
+						<br/>
+						These values indicate the position along the color axes, with negative values indicating one direction (e.g., green or blue) and positive values
+						indicating the other (e.g., red or yellow).<br/>
+						They can exceed the typical -100 to 100 range for highly saturated colors.  These values are essentially coordinates within a defined color space, and they don't inherently require a unit like percentages or degrees.<br/>
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="LUVInt">
+								<summary>
+										RGB decimal value from Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LUVColor">
+								<summary>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<properties>
+						<property name="L">
+								<summary>
+										L* (Lightness): Represents the perceived brightness or lightness of a color, ranging from 0 (black) to 100 (white).<br/>
+										This component is identical to the L* component in the CIELAB color space.<br/>
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="U">
+								<summary>
+										u* (Red-Green Chromaticity): Represents the color’s position on a red-green axis, where positive values indicate a shift towards red and negative values indicate a shift towards green.										
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="V">
+								<summary>
+										v* (Blue-Yellow Chromaticity): Represents the color’s position on a blue-yellow axis, where positive values indicate a shift towards yellow and negative values indicate a shift towards blue.
+								</summary>
+								<returns></returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

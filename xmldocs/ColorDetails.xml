@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="ColorDetails">
+    <returns />
+    <interfaces>
+      <interface name="ColorDetailsOther">
+        <summary>Constructors with no parameters are not supported for netstandard2.0</summary>
+        <returns></returns>
+      </interface>
+      <interface name="ColorDetailsInt">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+      <interface name="ColorDetailsColor">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+    </interfaces>
+    <properties>
+      <property name="Empty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="IsEmpty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Argb">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Rgb">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Tone">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Temperature">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="FGAscii">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="BGAscii">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="CMYK">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="HEX">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="HSB">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="HSL">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="HSV">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="LAB">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="LCH">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="LUV">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="XYZ">
+        <summary></summary>
+        <returns></returns>
+      </property>
+    </properties>
+  </class>
+</extradoc>

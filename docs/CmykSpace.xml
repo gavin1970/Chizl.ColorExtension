@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="CmykSpace">
+				<summary>
+				CMYK which stands for Cyan, Magenta, Yellow, and Key (Black), is a subtractive color model used primarily in printing.
+				It works by layering different amounts of these four inks to create a wide range of colors on paper.<br/><br/>
+
+				Unlike RGB, which is additive and used for digital displays, CMYK relies on physically mixing colored inks to produce the final image.<br/>
+				• The standard mathematical conversions from RGB to CMYK do not include the alpha channel.<br/>
+				• Each ink color (Cyan, Magenta, Yellow, and Black) absorbs certain wavelengths of light and reflects others.<br/>
+				• By layering these inks in different combinations and densities, printers can create a vast array of colors.<br/>
+				• For example when cyan, magenta, and yellow are combined, they create black.<br/><br/>
+
+				CMYK is subtractive, meaning it's based on ink colors that absorb light, while RGB is additive, meaning it's based on light colors that add together.<br/>
+				CMYK is used in printing, while RGB is used in digital displays like computer screens and televisions.
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="CMYKInt">
+								<summary>
+								Parameters:<br/>
+								- decValue (int) - Color ARGB decimal value.
+								<example>
+								<code>
+								CMYK var = new CMYK(16515);
+								</code>
+								</example>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="CMYKColor">
+								<summary>
+										Parameters:<br/>
+										clr (Color) - Color object.
+										<code>
+										CMYK var = new CMYK(Color.Green);
+										</code>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="CMYKDoubles">
+								<summary>
+										Parameters:<br/>
+										cyan (double), magenta (double), yellow (double), key (double)
+										<code>
+										CMYK var = new CMYK(10, 5, 5, 0);
+										</code>
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<methods>
+						<method name="CreateColor">
+								CreateColor(byte Cyan, byte Yellow, byte Magenta, byte Key), static method to be called allowing the passing of C, Y, M, K to create a Color object.<br/>
+								Each argument has a range of 0 - 100.  If outside these bounds, the color returned will be 'Color.Empty' and can be verified with 'retValColor.IsEmpty'.
+						</method>
+						<returns>
+								<code>(Color.class) - Converted from C, Y, M, K to create a Color Object.  The Alpha channel will always be 255.</code>
+						</returns>
+				</methods>
+				<properties>
+						<property name="Cyan">
+								<summary>
+										Cyan: Absorbs red light, reflecting blue and green.
+								</summary>
+								<returns>
+										(double) - Ranges from 0.00 -> 100.00<br/>
+										Example: 50.62, representing 50.62%
+								</returns>
+						</property>
+						<property name="Magenta">
+								<summary>
+										Magenta: Absorbs green light, reflecting red and blue.
+								</summary>
+								<returns>
+										(double) - Ranges from 0.00 -> 100.00<br/>
+										Example: 50.62, representing 50.62%
+								</returns>
+						</property>
+						<property name="Yellow">
+								<summary>
+										Yellow: Absorbs blue light, reflecting red and green.
+								</summary>
+								<returns>
+										(double) - Ranges from 0.00 -> 100.00<br/>
+										Example: 50.62, representing 50.62%
+								</returns>
+						</property>
+						<property name="Key">
+								<summary>
+										Key (Black): Adds depth, contrast, and detail to the printed image. The "K" stands for "key" because the black plate is crucial for aligning the other color plates during the printing process.
+								</summary>
+								<returns>
+										(double) - Ranges from 0.00 -> 100.00<br/>
+										Example: 50.62, representing 50.62%
+								</returns>
+						</property>
+						<property name="ValueString">
+								<summary>
+										ToString() response: String representing CMYK.
+								</summary>
+								<returns>
+										(string) - Formated string of each C, M, Y, and K in percentage format.<br/>
+										Example: "CMYK[C=0.00%, M=50.00%, Y=100.00%, K=0.00%]"
+								</returns>
+						</property>
+						<property name="ValueRaw">
+								<summary>
+										Class primary property values in a string format, e.g. "0.00,50.00,100.00,0.00"<br/>
+								</summary>
+								<returns>
+										(string)<br/>
+										Returns C,M,Y, and K values rounded by 2 decimal places in string format and only seperated by a comma.<br/>
+										Format is raw decimal values with no spaces. A comma is to seperate each value.<br/>
+										Example: "0.00,50.00,100.00,0.00"
+								</returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

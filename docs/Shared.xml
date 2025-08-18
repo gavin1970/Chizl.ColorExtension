@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="Shared">
+				<properties>
+						<property name="CIELABvsCIELUV">
+								<summary>
+										While both CIELAB and CIELUV are perceptually uniform color spaces derived from XYZ, they are intended for different applications.<br/>
+										CIELAB is often used for subtractive color applications (like printing), while CIELUV is better suited for additive color applications (like displays).
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="Empty">
+								<summary>
+										Empty, creates an empty class object with no values.  IsEmpty property will True.
+								</summary>
+								<returns>
+										Class object with no properties set.
+								</returns>
+						</property>
+						<property name="IsEmpty">
+								<summary>
+										IsEmpty, Class was never initialized properly.
+								</summary>
+								<returns>
+										(boolean)<br/>
+										- True: Class was never initialized properly.<br/>
+										- False: Class is ready for use.
+								</returns>
+						</property>
+						<property name="HSVBL_Hue">
+								<summary>
+										Hue (H in HSV, HSB, and HSL):<br/>
+										Definition: The fundamental attribute of color that distinguishes “red,” “green,” “blue,” etc.<br/>
+										Representation: Hue is expressed as an angle on the RGB color wheel, measured in degrees.<br/>
+										Range: 0° to 360° (angle/degrees) on the color wheel.<br/>
+										Note: This measurement is based on the RGB color model, not the RYB (Red-Yellow-Blue) wheel used in traditional color theory.<br/>
+										<br/>
+										Degree | Color<br/>
+										0°     | Red<br/>
+										60°    | Yellow<br/>
+										120°   | Green<br/>
+										180°   | Cyan<br/>
+										240°   | Blue<br/>
+										300°   | Magenta<br/>
+										360°   | (Red again)
+								</summary>
+								<returns>
+										(double)<br/>
+										- Min Value: 0.00<br/>
+										- Max Value: 360.00
+								</returns>
+						</property>
+						<property name="Tint">
+								<summary>
+										Returns a tinted version of the original color (mixed with white).
+										<code>
+												<paramref name="percentage"/> - Amount to tint, from 0 to 100
+										</code>
+								</summary>
+								<returns>
+										(Color) - Tinted color
+								</returns>
+						</property>
+						<property name="Shade">
+								<summary>
+										Returns a shaded version of the original color (mixed with black).
+										<code>
+												<paramref name="percentage"/> - Amount to shade, from 0 to 100.
+										</code>
+								</summary>
+								<returns>
+										(Color) - Shaded color
+								</returns>
+						</property>
+						<property name="Temperature">
+								<summary>
+										Definition: A perception-based measure of how “warm” or “cool” a color feels, typically derived from its hue.<br/>
+										Representation:<br/>
+										- Measured as a position on the hue wheel (HSV or HSL).<br/>
+										- Not a physical temperature, but a visual and emotional association.<br/>
+										Categories (example ranges based on hue):<br/>
+										- Hot: 0°–15° or 345°–360° (Red, Scarlet)<br/>
+										- Warm: 15°–60° (Orange, Yellow)<br/>
+										- Neutral-Warm: 60°–150° (Yellow-green to Green)<br/>
+										- Cool: 150°–210° (Cyan, Aqua)<br/>
+										- Cold: 210°–270° (Blue, Indigo)<br/>
+										- Neutral-Cool: 270°–345° (Violet to Magenta)<br/>
+										Use Case: Widely used in art, lighting, photography, and UI design to influence mood and emotion.<br/>
+										🔥 Warm colors evoke energy and friendliness.<br/>
+										❄️ Cool colors feel calm, stable, or professional.
+								</summary>
+								<returns>
+										(string)<br/>
+										- Hot<br/>
+										- Warm<br/>
+										- Neutral-Warm<br/>
+										- Cool<br/>
+										- Cold<br/>
+										- Neutral-Cool
+								</returns>
+						</property>
+						<property name="Tone">
+								<summary>
+										Definition: A qualitative description of a color's visual character based on its brightness and saturation.<br/>
+										Interpretation: Tone captures how soft, vivid, dark, or pastel a color appears.<br/>
+										Components:<br/>
+										- Brightness (Value or Lightness) — How light or dark the color is.<br/>
+										- Saturation — How intense or muted the color is.<br/>
+										Common Tone Descriptors:<br/>
+										- Dark, Muted, Rich, Pale, Vibrant, Bright, Deep, Dull, Pastel<br/>
+										Use Case: Useful in design, art, and color naming to express a mood or style (e.g., "Moody Blue", "Bright Coral").<br/>
+										💡 Think of tone as the personality of a color—whether it's energetic, soft-spoken, elegant, or bold.
+								</summary>
+								<returns>
+										(string)<br/>
+										If Saturation is below 0.2 the wording will have 3 levels of "Neutral" based on Value of HSV. (LightNeutral, DarkNeutral, and Neutral)<br/>
+										If Saturation is greater or equal to 0.2, Value ranges 4 more levels. (Light, Dark, Vibrant, and Moderate).
+								</returns>
+						</property>
+						<property name="ValueString">
+								<summary>
+										Class primary property values in a string format, e.g. "SPACE[A=11.00º, B=22.00%, C=33.00%]"<br/>
+										- "SPACE represents: CMYK, HEX, HSL, HSV, HSB, LAB, LCH, LUV, or XYZ
+								</summary>
+								<returns>
+										(string)<br/>
+										Returns property values rounded by 2 decimal places in string format with each value displaying the type of value it represents.<br/>
+										Format start with the color space name and then encapsulate the values by brackets<br/>
+										- "HSV[H=280.00º, S=48.75%, V=97.26%]"
+								</returns>
+						</property>
+						<property name="ValueRaw">
+								<summary>
+										Class primary property values in a string format, e.g. "11.00,22.00,33.00%"
+								</summary>
+								<returns>
+										(string)<br/>
+										Returns HSL, HSV, or HSB values rounded by 2 decimal places in string format and only seperated by a comma.<br/>
+										Returns property values rounded by 2 decimal places in string format without displaying type.<br/>
+										Format is raw decimal values with no spaces. A comma is to seperate each value.<br/>
+										- "280.00,48.75,97.26"  ^([\d]{1,3}.?[\d]{0,2}){3}$
+								</returns>
+						</property>
+						<property name="ToHSV">
+								<summary>
+										Gets the Contrast color of existing color based on threashhold<br/>
+										<code>
+												<paramref name="bestContrastColor"/> - "out double hue" arguement of a new contrast color.<br/>
+												<paramref name="contrastRatio"/> - "out double saturation" arguement with ratio used between original color and the contrast color.<br/>
+												<paramref name="minThreshold"/> - "out double value" arguement to set the minimum threashold that should be used.<br/>
+										</code>
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="Complementary">
+								<summary>
+										Gets the complementary color ((hsb.Hue + 180) % 360) of existing color.
+								</summary>
+								<returns>
+										(Color) - The complementary color of existing color object.
+								</returns>
+						</property>
+						<property name="Contrast">
+								<summary>
+										Gets the Contrast color of existing color based on threashhold<br/>
+										<code>
+												<paramref name="bestContrastColor"/> - "out Color" arguement of a new contrast color.<br/>
+												<paramref name="contrastRatio"/> - "out double" arguement with ratio used between original color and the contrast color.<br/>
+												<paramref name="minThreshold"/> - "double" (Optional) arguement to set the minimum threashold that should be used.<br/>
+										</code>
+								</summary>
+								<returns>
+										(Color) - The complementary color of existing color object.
+								</returns>
+						</property>
+						<property name="IsDark">
+								<summary>
+										Determines if a color is considered "dark" based on its luminance, for optimal text readability.<br/><br/>
+										Params:<br/>
+										<code>
+												<paramref name="threshold"/> - A luminance threshold (0.0 to 1.0) to distinguish between dark and light colors.<br/>
+												Lower values mean the color must be very dark to return true.<br/>
+												A common starting point is 0.5.<br/>
+												For improved visual contrast, values between 0.45 and 0.6 are often effective.<br/>
+												(Note: WCAG guidelines use a different calculation for contrast ratio, not a simple luminance threshold.)
+										</code>
+								</summary>
+								<returns>
+										(bool) - True if the color's luminance is below the threshold, indicating it is dark; otherwise, false.
+								</returns>
+						</property>
+						<property name="IsLight">
+								<summary>
+										Determines if a color is considered "light" based on its luminance, for optimal text readability.<br/><br/>
+										Params:<br/>
+										<code>
+												<paramref name="threshold"/> - A luminance threshold (0.0 to 1.0) to distinguish between dark and light colors.<br/>
+												Higher values mean the color must be lighter to return true.<br/>
+												A common starting point is 0.5.<br/>
+												For improved visual contrast, values between 0.45 and 0.6 are often effective.<br/>
+												(Note: WCAG guidelines use a different calculation for contrast ratio, not a simple luminance threshold)
+										</code>
+								</summary>
+								<returns>
+										(bool) - True if the color's luminance is above the threshold, indicating it is light; otherwise, false.
+								</returns>
+						</property>
+						<property name="ToRgb">
+								<summary>
+										Creates an Integer from the RGB, forcing Alpha to 255.
+								</summary>
+								<returns>
+										(int) -  RGB Interger value with alpha being ignored/set to 0.
+								</returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="XYZ">
+				<summary>
+						The CIE XYZ color space is one of the earliest mathematical representation of all colors visible to the human eye, serving as a standard reference for other color spaces.<br/>
+						It's defined by three imaginary primary colors (X, Y, and Z), where Y represents luminance (brightness), and X and Z represent chromaticity (color).<br/>
+						This space is device-independent, meaning it can be used to describe colors without being tied to a specific display or printing technology.<br/>
+						The XYZ color space serves as a fundamental reference for many other color spaces, but distances in this space do not directly reflect perceived color differences as accurately as LAB or LUV.<br/>
+						The XYZ color space is often used as a reference to convert from one color space to another, making it a crucial tool in color management.
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="XYZInt">
+								<summary>
+										RGB decimal value from or to create Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="XYZColor">
+								<summary>
+										Color object to build RGB decimal value from or to create Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<properties>
+						<property name="X">
+								<summary>
+										'X' and 'Z' represent chromaticity (color).
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="Y">
+								<summary>
+										'Y' specifically represents the luminance or perceived brightness of the color.<br/>
+										Using example color Azure (#F0FFFF), "XYZ [90, 97, 109]", 'Y' value of 97 confirms that Azure is a very bright color and consistent with its high lightness values in LCH and LAB.
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="Z">
+								<summary>
+										Higher 'Z' values (which are more sensitive to blue light) and higher 'Y' values (for brightness) relative to 'X' values are characteristic of light blue colors.
+								</summary>
+								<returns></returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

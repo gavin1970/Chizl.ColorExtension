@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="CmykRule">
+    <returns />
+    <interfaces>
+      <interface name="CmykRule">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+      <interface name="CmykRuleIntOtherStringString">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+    </interfaces>
+    <methods>
+      <method name="Equals">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="GetHashCode">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="ToString">
+        <summary></summary>
+        <returns></returns>
+      </method>
+    </methods>
+    <properties>
+      <property name="IsEmpty">
+        <summary>Empty Validation only set to true when not fully initialized.</summary>
+        <returns></returns>
+      </property>
+      <property name="RuleNo">
+        <summary>Rule #</summary>
+        <returns></returns>
+      </property>
+      <property name="Condition">
+        <summary>Condition for Modifier</summary>
+        <returns></returns>
+      </property>
+      <property name="Modifier">
+        <summary>Response text.</summary>
+        <returns></returns>
+      </property>
+      <property name="RulesDisplay">
+        <summary>Rules used</summary>
+        <returns></returns>
+      </property>
+      <property name="Cyan">
+        <summary>Cyan, is set during response with value found within range of this Condition.</summary>
+        <returns></returns>
+      </property>
+      <property name="Magenta">
+        <summary>Magenta, is set during response with value found within range of this Condition.</summary>
+        <returns></returns>
+      </property>
+      <property name="Yellow">
+        <summary>Yellow, is set during response with value found within range of this Condition.</summary>
+        <returns></returns>
+      </property>
+      <property name="Key">
+        <summary>Key, is set during response with value found within range of this Condition.</summary>
+        <returns></returns>
+      </property>
+      <property name="Black">
+        <summary>Black aka Key, will have the same value as Key.</summary>
+        <returns></returns>
+      </property>
+      <property name="Empty">
+        <summary>Used when nothing else is valid.</summary>
+        <returns></returns>
+      </property>
+    </properties>
+  </class>
+</extradoc>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="LabSpace">
+    <returns />
+    <interfaces>
+      <interface name="LabSpaceOther">
+        <summary>Constructors with no parameters are not supported for netstandard2.0</summary>
+        <returns></returns>
+      </interface>
+      <interface name="LabSpaceIntOther">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+      <interface name="LabSpaceColorOther">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+      <interface name="LabSpaceOtherOther">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+    </interfaces>
+    <methods>
+      <method name="Equals">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="GetHashCode">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="ToString">
+        <summary></summary>
+        <returns></returns>
+      </method>
+    </methods>
+    <properties>
+      <property name="Empty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="IsEmpty">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="L">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="A">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="B">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="ValueString">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="ValueRaw">
+        <summary></summary>
+        <returns></returns>
+      </property>
+    </properties>
+  </class>
+</extradoc>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="LAB">
+				<summary>
+						LAB and LUV (L*, a*, b*, u*, v*): These color spaces are derived from the XYZ space and are designed to be perceptually uniform, 
+						meaning that the numerical distance between colors in these spaces corresponds more closely to the perceived difference in color 
+						by the human eye than in the XYZ space.<br/>
+						<br/>
+						The L* value represents lightness, typically ranging from 0 to 100, where 0 is black and 100 is white.<br/>
+						The a* (red-green) and b* (blue-yellow) values in CIELAB,<br/>
+						<br/>
+						A negative value indicates a shift towards blue.<br/>
+						A small negative value here means a very subtle blue tint.<br/>
+						The combination of these small negative 'a' and 'b' values suggests a color that is very close to neutral gray, but with a slight leaning towards the blue-green side, which is characteristic of a pale azure.<br/>
+						The LAB color space is designed to be perceptually uniform, meaning that numerical differences in the values correspond to similar perceived color differences by humans.<br/>
+						<br/>
+						These values indicate the position along the color axes, with negative values indicating one direction (e.g., green or blue) and positive values indicating the other (e.g., red or yellow).<br/>
+						They can exceed the typical -100 to 100 range for highly saturated colors. These values are essentially coordinates within a defined color space, and they don't inherently require a unit like percentages or degrees.
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="LABInt">
+								<summary>
+										RGB decimal value from Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LABColor">
+								<summary>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<properties>
+						<property name="L">
+								<summary>
+										L (Lightness):<br/>
+										- Similar to LCH, this confirms the color is very light. The 'L' component in LAB ranges from 0 (black) to 100 (white).<br/>
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="A">
+								<summary>
+										A (Green–Red axis)<br/>
+										- The 'A' component represents the green-red axis.<br/>
+										- Negative values indicates a shift towards green. In this case, a small negative value means a very subtle green tint.<br/>
+								</summary>
+								<returns></returns>
+						</property>
+						<property name="B">
+								<summary>
+										B (Blue–Yellow axis)<br/>
+										- The 'B' component represents the blue-yellow axis.<br/>
+										- Negative values indicates a shift towards blue. A small negative value here means a very subtle blue tint. <br/>
+										- The combination of these small negative 'a' and 'b' values suggests a color that is very close to neutral gray, but with a slight leaning towards the blue-green side, which is characteristic of a pale azure.<br/>
+								</summary>
+								<returns></returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

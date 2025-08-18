@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="Constants">
+    <returns />
+    <methods>
+      <method name="CreateHueInterpolations">
+        <summary></summary>
+        <returns></returns>
+      </method>
+      <method name="GetCMYKModifier">
+        <summary>OPTIONAL CMYK-BASED MODIFIER STRATEGY</summary>
+        <returns>CMYK Rule, holding details on Rule if found.</returns>
+        <params>
+          <param name="cmykSpace">
+            <summary></summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetCMYKModifier">
+        <summary>OPTIONAL CMYK-BASED MODIFIER STRATEGY</summary>
+        <returns>CmykRule object with modifier and rule information.</returns>
+        <params>
+          <param name="c">
+            <summary>Cyan decimal value</summary>
+          </param>
+          <param name="m">
+            <summary>Magenta decimal value</summary>
+          </param>
+          <param name="y">
+            <summary>Yellow decimal value</summary>
+          </param>
+          <param name="k">
+            <summary>Key decimal value</summary>
+          </param>
+        </params>
+      </method>
+      <method name="GetToneModifier">
+        <summary>TONE-BASED MODIFIER STRATEGY</summary>
+        <returns>ToneRule object with modifier and rule information.</returns>
+        <params>
+          <param name="s">
+            <summary></summary>
+          </param>
+          <param name="v">
+            <summary></summary>
+          </param>
+        </params>
+      </method>
+    </methods>
+    <properties>
+      <property name="HueMapper">
+        <summary>HSV/HSB/HSL - Hue
+         HUE INTERPOLATION ENTRIES (0 to 360) DEGREES</summary>
+        <returns></returns>
+      </property>
+      <property name="SaturationHSVMapper">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="SaturationHSLMapper">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="ValueMapper">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="LightnessMapper">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="TemperatureMapper">
+        <summary></summary>
+        <returns></returns>
+      </property>
+    </properties>
+  </class>
+</extradoc>

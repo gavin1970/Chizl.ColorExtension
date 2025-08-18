@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="Shared">
+				<questions>
+						<question name="ColorToHSVToColor">
+								<summary>
+										Even with the use of only doubles, there is still a slight variance in Hue conversions.<br/>
+										Example:<br/>
+										var color = HsvToColor(1.0, 1.0, 1.0)<br/>
+										reurns: RGB[255,4,0],  HEX[#FF0400]<br/>
+										<br/>
+										Convert back to HSV gets:<br/>
+										HSV[H=0.94º, S=100.00%, V=100.00%]<br/>
+								</summary>
+								<returns>
+										This is a very common and often misunderstood aspect of color space conversions, even when using double for all calculations: the loss of information during the quantization to 8-bit integers (bytes) for the RGB representation.<br/>
+										<br/>
+										Let's break down a specific example:<br/>
+										HsvToColor(1.0, 1.0, 1.0)<br/>
+										returns: RGB[255,4,0]<br/>
+										<br/>
+										This means:<br/>
+										Initial Hue: 1.0<br/>
+										Initial Saturation: 1.0<br/>
+										Initial Value: 1.0<br/>
+										<br/>
+										The HsvToColor method calculates intermediate r, g, b values (doubles between 0 and 1) and then Math.Rounds them and scales to 0-255:<br/>
+										For H=1.0, S=1.0, V=1.0:<br/>
+										hPrime = 1.0 / 60.0 = 0.01666...<br/>
+										<br/>
+										This falls into if (hPrime >= 0 AND hPrime &lt; 1)<br/>
+										c = val * sat = 1.0 * 1.0 = 1.0<br/>
+										x = c * (1 - Math.Abs((hPrime % 2) - 1)) = 1.0 * (1 - Math.Abs(0.01666... - 1)) = 1.0 * (1 - 0.98333...) = 0.01666...<br/>
+										r = c = 1.0<br/>
+										g = x = 0.01666...<br/>
+										b = 0<br/>
+										m = val - c = 1.0 - 1.0 = 0<br/>
+										<br/>
+										finalR = (byte)Math.Round((1.0 + 0) * 255) = (byte)Math.Round(255.0) = 255<br/>
+										finalG = (byte)Math.Round((0.01666... + 0) * 255) = (byte)Math.Round(4.25) = 4<br/>
+										finalB = (byte)Math.Round((0.0 + 0) * 255) = (byte)Math.Round(0.0) = 0<br/>
+										<br/>
+										So, RGB[255,4,0] is indeed the correct result of HsvToColor method for H=1.0, S=1.0, V=1.0.<br/>
+										<br/>
+										Now, when converting RGB[255,4,0] back to HSV:<br/>
+										HSV[H=0.94º, S=100.00%, V=100.00%]<br/>
+										Let's trace how the reverse conversion happens (assuming a standard RGB to HSV algorithm):<br/>
+										<br/>
+										Normalize RGB:<br/>
+										R' = 255 / 255 = 1.0<br/>
+										G' = 4 / 255 = 0.015686...<br/>
+										B' = 0 / 255 = 0.0<br/>
+										<br/>
+										Find Max, Min, Delta:<br/>
+										Cmax = max(1.0, 0.015686..., 0.0) = 1.0<br/>
+										Cmin = min(1.0, 0.015686..., 0.0) = 0.0<br/>
+										Delta = Cmax - Cmin = 1.0 - 0.0 = 1.0<br/>
+										<br/>
+										Calculate Value (V):
+										V = Cmax = 1.0 (or 100%) - This matches the result.
+										<br/>
+										Calculate Saturation (S):<br/>
+										S = Delta / Cmax = 1.0 / 1.0 = 1.0 (or 100%) - This matches the result.<br/>
+										<br/>
+										Calculate Hue (H):<br/>
+										Since Cmax is R', the formula for hue is typically:<br/>
+										H = 60 * ((G' - B') / Delta)<br/>
+										If G' &lt; B', add 360 to the result to wrap around.<br/>
+										H = 60 * ((0.015686... - 0.0) / 1.0)<br/>
+										H = 60 * 0.015686...<br/>
+										H = 0.94117...<br/>
+										<br/>
+										This 0.94117... is indeed very close to 0.94º.<br/>
+										The Core Reason for the Variance:<br/>
+										The "variance" here isn't a problem with using double or a fundamental flaw in the algorithms (assuming both are correctly implemented). It's a direct consequence of the data compression/quantization that happens when we convert a continuous color space (like HSV or floating-point RGB) into a discrete, limited-precision representation like 8-bit per channel RGB.<br/>
+										<br/>
+										The initial H=1.0 translated to a g value of 0.01666....<br/>
+										When this 0.01666... was Math.Rounded and scaled to a byte, it became 4.<br/>
+										The original 0.01666... is a very specific, precise floating-point number.<br/>
+										The value 4 (when unscaled back to 4/255 = 0.015686...) is not exactly 0.01666.... It's the closest integer representation available in 0-255 range.<br/>
+										Because 0.015686... is slightly different from 0.01666..., when we run the RGB-to-HSV conversion, that slight difference in the green component propagates to a slightly different hue calculation.<br/>
+										<br/>
+										It's like this:<br/>
+										Imagine the number 3.14159265.<br/>
+										Now round it to two decimal places: 3.14.<br/>
+										Now, try to get back the original number from 3.14. We can't. We've lost the information 0.00159265.<br/>
+										The same principle applies here, but with floating-point numbers being rounded to integers for the byte representation.<br/>
+										<br/>
+										Is it expected?<br/>
+										Absolutely yes. This is perfectly normal and expected behavior when converting between continuous and discrete color representations. Unless we explicitly work only with floating-point double RGB values throughout the entire application (never converting to bytes), we will always experience this kind of precision loss.<br/>
+										For practical purposes (displaying colors on screens, user interfaces), this minuscule difference in hue (0.06 degrees in the example) is entirely imperceptible to the human eye.
+								</returns>
+						</question>
+				</questions>
+		</class>
+</extradoc>

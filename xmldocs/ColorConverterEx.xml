@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="ColorConverterEx">
+    <returns />
+    <methods>
+      <method name="CmykToArgb">
+        <summary>Converts CMYK to RGB decimal value. (w/o alpha) &lt;br/&gt;  NOTE: Converting is not always a direct correlation. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>(int) RGB "Color" decimal value with alpha.</returns>
+        <params>
+          <param name="c">
+            <summary>Cyan component (0.0 - 1.0)</summary>
+          </param>
+          <param name="m">
+            <summary>Magenta component (0.0 - 1.0)</summary>
+          </param>
+          <param name="y">
+            <summary>Yellow component (0.0 - 1.0)</summary>
+          </param>
+          <param name="k">
+            <summary>Black (Key) component (0.0 - 1.0)</summary>
+          </param>
+        </params>
+      </method>
+      <method name="CmykToRgb">
+        <summary>Converts CMYK to RGB decimal value. (w/o alpha) &lt;br/&gt;  NOTE: Converting is not always a direct correlation. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>(int) RGB "Color" decimal value w/o alpha.</returns>
+        <params>
+          <param name="c">
+            <summary>Cyan component (0.0 - 1.0)</summary>
+          </param>
+          <param name="m">
+            <summary>Magenta component (0.0 - 1.0)</summary>
+          </param>
+          <param name="y">
+            <summary>Yellow component (0.0 - 1.0)</summary>
+          </param>
+          <param name="k">
+            <summary>Black (Key) component (0.0 - 1.0)</summary>
+          </param>
+        </params>
+      </method>
+      <method name="CmykToColor">
+        <summary>Converts CMYK color values to RGB color. &lt;br/&gt;  CMYK values are expected to be in the range [0.0, 1.0]. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation, however by using CymkSpace, &lt;br/&gt;               it use better precision decimal points by using RawKey property instead of Key. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>Color object</returns>
+        <params>
+          <param name="cmyk">
+            <summary>CmykSpace struct</summary>
+          </param>
+        </params>
+      </method>
+      <method name="CmykToColor">
+        <summary>Converts CMYK color values to RGB color. &lt;br/&gt;  CMYK values are expected to be in the range [0.0, 1.0]. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>Color object</returns>
+        <params>
+          <param name="c">
+            <summary>Cyan component (0.0 - 1.0)</summary>
+          </param>
+          <param name="m">
+            <summary>Magenta component (0.0 - 1.0)</summary>
+          </param>
+          <param name="y">
+            <summary>Yellow component (0.0 - 1.0)</summary>
+          </param>
+          <param name="k">
+            <summary>Black (Key) component (0.0 - 1.0)</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HsvToArgb">
+        <summary>Converts HSV to ARGB decimal value. (w/ alpha) &lt;br/&gt;  NOTE: There are only 3,600,000 unique HSV combinations.  In 24bit color there are 16,777,216 RGB combinations. &lt;br/&gt;  - This means that each HSV combinations will match with four differnt RGB values. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>(int) One of four possible ARGB "Color" decimal value with alpha.</returns>
+        <params>
+          <param name="h">
+            <summary>Hue Decimal Value</summary>
+          </param>
+          <param name="s">
+            <summary>Saturation Decimal Value</summary>
+          </param>
+          <param name="v">
+            <summary>Value Decimal Value</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HsvToRgb">
+        <summary>Converts HSV to RGB decimal value. (w/o alpha) &lt;br/&gt;  NOTE: There are only 3,600,000 unique HSV combinations.  In 24bit color there are 16,777,216 RGB combinations. &lt;br/&gt;  - This means that each HSV combinations will match with four differnt RGB values. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>(int) One of four possible ARGB "Color" decimal value w/o alpha.</returns>
+        <params>
+          <param name="h">
+            <summary>Hue Decimal Value</summary>
+          </param>
+          <param name="s">
+            <summary>Saturation Decimal Value</summary>
+          </param>
+          <param name="v">
+            <summary>Value Decimal Value</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HsvToColor">
+        <summary>Converts HSV (Hue, Saturation, Value) color to RGB (Red, Green, Blue). &lt;br/&gt;  NOTE: There are only 3,600,000 unique HSV combinations.  There are 16,777,216 RGB combinations. &lt;br/&gt;  - This means that each HSV combinations will match with 4 differnt RGB values. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>One of four possible color object</returns>
+        <params>
+          <param name="hsv">
+            <summary>HsvSpace struct</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HsvToColor">
+        <summary>Converts HSV (Hue, Saturation, Value) color to RGB (Red, Green, Blue). &lt;br/&gt;  NOTE: There are only 3,600,000 unique HSV combinations.  There are 16,777,216 RGB combinations. &lt;br/&gt;  - This means that each HSV combinations will match with 4 differnt RGB values. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>One of four possible color object</returns>
+        <params>
+          <param name="h">
+            <summary>Hue component (0-360 degrees).</summary>
+          </param>
+          <param name="s">
+            <summary>Saturation component (0-1, or 0% to 100%).</summary>
+          </param>
+          <param name="v">
+            <summary>Value component (0-1, or 0% to 100%).</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HslToArgb">
+        <summary>Converts HSL color values to RGB color values. &lt;br/&gt;  HSL values are expected as follows: &lt;br/&gt;  Hue (h): 0.0 - 360.0 degrees &lt;br/&gt;  Saturation (s): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  Lightness (l): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  RGB values will be returned in the range [0, 255]. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>(int) One of four possible ARGB "Color" decimal value with alpha.</returns>
+        <params>
+          <param name="h">
+            <summary>Hue component (0.0 - 360.0 degrees).</summary>
+          </param>
+          <param name="s">
+            <summary>Saturation component (0.0 - 1.0).</summary>
+          </param>
+          <param name="l">
+            <summary>Lightness component (0.0 - 1.0).</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HslToRgb">
+        <summary>Converts HSL color values to RGB color values. &lt;br/&gt;  HSL values are expected as follows: &lt;br/&gt;  Hue (h): 0.0 - 360.0 degrees &lt;br/&gt;  Saturation (s): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  Lightness (l): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  RGB values will be returned in the range [0, 255]. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>(int) One of four possible ARGB "Color" decimal value w/o alpha.</returns>
+        <params>
+          <param name="h">
+            <summary>Hue component (0.0 - 360.0 degrees).</summary>
+          </param>
+          <param name="s">
+            <summary>Saturation component (0.0 - 1.0).</summary>
+          </param>
+          <param name="l">
+            <summary>Lightness component (0.0 - 1.0).</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HslToColor">
+        <summary>Converts HSL color values to RGB color values. &lt;br/&gt;  HSL values are expected as follows: &lt;br/&gt;  Hue (h): 0.0 - 360.0 degrees &lt;br/&gt;  Saturation (s): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  Lightness (l): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  RGB values will be returned in the range [0, 255]. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>One of four possible color object</returns>
+        <params>
+          <param name="hsl">
+            <summary>HslSpace struct</summary>
+          </param>
+        </params>
+      </method>
+      <method name="HslToColor">
+        <summary>Converts HSL color values to RGB color values. &lt;br/&gt;  HSL values are expected as follows: &lt;br/&gt;  Hue (h): 0.0 - 360.0 degrees &lt;br/&gt;  Saturation (s): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  Lightness (l): 0.0 - 1.0 (0% - 100%) &lt;br/&gt;  RGB values will be returned in the range [0, 255]. &lt;br/&gt;  CONVERSIONS: There is not always a direct 1 to 1 correlation. &lt;br/&gt;  - When converting doubles to create RGB byte/int values means there is rounding. &lt;br/&gt;    This provides you the correct values, but the conversion back to doubles might not be what you passed in.</summary>
+        <returns>One of four possible color object</returns>
+        <params>
+          <param name="h">
+            <summary>Hue component (0.0 - 360.0 degrees).</summary>
+          </param>
+          <param name="s">
+            <summary>Saturation component (0.0 - 1.0).</summary>
+          </param>
+          <param name="l">
+            <summary>Lightness component (0.0 - 1.0).</summary>
+          </param>
+        </params>
+      </method>
+    </methods>
+  </class>
+</extradoc>

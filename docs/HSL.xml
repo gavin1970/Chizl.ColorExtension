@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extradoc>
+		<class name="HSL">
+				<summary>
+						This class is not an abstract class, but used as one for each internal color class.
+						This is so it can be used internally with an extension "Chizl.ColorExtensions.Info".
+						Info() to be used on Microsoft's Color struct and ConsoleColor enum.<br/>
+						<b>Understand Hue w/ Quotes from:</b> <a href="https://color-wheel-artist.com/hue/">color-wheel-artist.com</a><br/>
+						Tint is sometimes also called a Pastel, but to be precise, Color Theory defines a True Tint as any Hue or mixture of pure colors with only White added.<br/>
+						Color Theory defines a True Tone as any Hue or mixture of pure colors with only Gray added. To be precise, this definition considers Gray as truly neutral.<br/>
+						Color Theory defines a True Shade​ as any pure Hue or mixture of pure colors with only Black added. In other words, it contains absolutely no White or Gray.<br/>
+						<b>(4) Depths in a Color Wheel:</b><br/>
+						<li>4. Hue - Most Outside, Pure Color</li><br/>
+						<li>3. Tints - Hue + White</li><br/>
+						<li>2. Tones - Hew + Gray</li><br/>
+						<li>1. Shade - Most Inner, Hue + Black</li>
+				</summary>
+				<returns></returns>
+				<interfaces>
+						<interface name="HSLInt">
+								<summary>
+										HSV(int decValue) or HSB(int decValue):<br/>
+										RGB decimal value from or to create Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="HSLColor">
+								<summary>
+										HSV(System.Drawing.Color) or HSB(System.Drawing.Color):<br/>
+										Color object to build RGB decimal value from or to create Color.<br/>
+										If alpha or transparency is included it will be ignored.
+								</summary>
+								<returns></returns>
+						</interface>
+				</interfaces>
+				<properties>
+						<property name="HSL_Saturation">
+								<summary>
+										Definition: The degree of colorfulness relative to the lightness of the color.<br/>
+										Represents: How intense or muted a hue is, based on how much gray is mixed in at a given lightness level.<br/>
+										Range: 0.00% (completely desaturated, gray) to 100.00% (fully saturated, pure hue).<br/>
+										Behavior:<br/>
+										- Low Saturation: The color appears muted, soft, or closer to gray.<br/>
+										- High Saturation: The color is vivid and intense.<br/>
+										Interpretation: At 0% saturation, the result is a shade of gray (regardless of the hue).
+										At 100%, the color is as pure as possible at that lightness level.
+										HSL saturation varies nonlinearly with lightness — very light or very dark colors naturally appear less saturated even at 100%.<br/>
+										Note: Unlike HSV, which measures saturation relative to value (brightness), HSL saturation is
+										calculated relative to lightness, which is the average of the maximum and minimum RGB components.
+										This makes HSL more perceptually intuitive for generating tints, shades, and tones.
+								</summary>
+								<returns>
+										(double)<br/>
+										- Min Value: 0.00<br/>
+										- Max Value: 100.00<br/>
+								</returns>
+						</property>
+						<property name="HSL_Lightness">
+								<summary>
+										Definition: The perceived light/dark level of a color in the HSL model.<br/>
+										Representation: Midpoint between black and white, where 0% is black, 50% is the pure color, and 100% is white.<br/>
+										Range: 0.00% (black) to 100.00% (white).<br/>
+										Interpretation:<br/>
+										- Low Lightness: The color is closer to black and appears dark or shadowy.<br/>
+										- Mid Lightness (≈50%): Pure hue without added black or white.<br/>
+										- High Lightness: The color is closer to white and may appear pastel or washed out.<br/>
+										Note: Unlike HSV, HSL lightness mixes both white and black, producing a symmetrical scale around the pure hue.
+								</summary>
+								<returns>
+										(double)<br/>
+										- Min Value: 0.00<br/>
+										- Max Value: 100.00<br/>
+								</returns>
+						</property>
+				</properties>
+		</class>
+</extradoc>

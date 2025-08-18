@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extradoc>
+  <class name="ColorAscii">
+    <returns />
+    <interfaces>
+      <interface name="ColorAscii">
+        <summary></summary>
+        <returns></returns>
+      </interface>
+    </interfaces>
+    <properties>
+      <property name="Blue">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Cyan">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="DarkGreen">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Green">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="LuminousVividAzure">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="LuminousVividChartreuseGreen">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="LuminousVividSpringGreen">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Maroon">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="NavyBlue">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Orange">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Red">
+        <summary></summary>
+        <returns></returns>
+      </property>
+      <property name="Yellow">
+        <summary></summary>
+        <returns></returns>
+      </property>
+    </properties>
+  </class>
+</extradoc>
