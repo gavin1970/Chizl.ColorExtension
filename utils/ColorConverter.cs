@@ -209,8 +209,8 @@ namespace Chizl.ColorExtension
 
             // Final RGB values, scaled to 0-255 and clamped
             byte red = (byte)Math.Round(Math.Max(0, Math.Min(255, (r + m) * 255)));
-            byte blue = (byte)Math.Round(Math.Max(0, Math.Min(255, (g + m) * 255)));
-            byte green = (byte)Math.Round(Math.Max(0, Math.Min(255, (b + m) * 255)));
+            byte blue = (byte)Math.Round(Math.Max(0, Math.Min(255, (b + m) * 255)));
+            byte green = (byte)Math.Round(Math.Max(0, Math.Min(255, (g + m) * 255)));
 
             return Color.FromArgb(red, blue, green);
         }

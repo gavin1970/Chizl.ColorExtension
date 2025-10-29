@@ -21,18 +21,70 @@
 				<interfaces>
 						<interface name="LABInt">
 								<summary>
-										RGB decimal value from Color.<br/>
-										If alpha or transparency is included it will be ignored.
+										RGB decimal value from Color decimal.<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LABIntD65">
+								<summary>
+										RGB decimal value from Color decimal with different illuminants "White".<br/>
 								</summary>
 								<returns></returns>
 						</interface>
 						<interface name="LABColor">
 								<summary>
-										If alpha or transparency is included it will be ignored.
+										Get Lab from RGB Color object.<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LABColorD65">
+								<summary>
+										Get Lab from RGB Color object with different illuminants "White".<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LABXYZ">
+								<summary>
+										Get Lab from XyzSpace struct.<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LABXYZD65">
+								<summary>
+										Get Lab from XyzSpace struct with different illuminants "White".<br/>
+								</summary>
+								<returns></returns>
+						</interface>
+						<interface name="LABXYZD50">
+								<summary>
+										Converts an XyzSpace value to LabSpace using a user-specified reference white.<br/>
 								</summary>
 								<returns></returns>
 						</interface>
 				</interfaces>
+				<methods>
+						<method name="GetDeltaE76">
+								<summary>
+										Calculates the perceptual difference between two LAB colors using the simple CIE76 (Euclidean distance) formula.<br/>
+										<paramref name="lab1"/> - The first LabSpace color.<br/>
+										<paramref name="lab2"/> - The second LabSpace color.<br/>
+								</summary>
+								<returns>A distance value. &lt; 1.0 is imperceptible, &gt; 10.0 is a different color.</returns>
+						</method>
+						<method name="ToXyzSpace">
+								<summary>
+										Converts this LabSpace color back to an XyzSpace color.
+								</summary>
+								<returns>A new XyzSpace object.</returns>
+						</method>
+						<method name="ToXyzSpaceIll">
+								<summary>
+										Converts this LabSpace color back to an XyzSpace color.<br/>
+										<paramref name="referenceWhite"/> - The illuminant - this LAB color is relative to D65 by default, but can be changed here.<br/>
+								</summary>
+								<returns>A new XyzSpace object.</returns>
+						</method>
+				</methods>
 				<properties>
 						<property name="L">
 								<summary>

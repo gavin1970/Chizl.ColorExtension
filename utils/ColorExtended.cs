@@ -75,13 +75,13 @@ namespace Chizl.ColorExtension
         }
 
         /// <include file="../docs/LAB.xml" path='extradoc/class[@name="LAB"]/interfaces/interface[@name="LABColor"]/*' />
-        public static LabSpace ToLab(this Color @this, bool precisionD65= false) => new LabSpace(@this, precisionD65);
+        public static LabSpace ToLab(this Color @this) => new LabSpace(@this);
 
         /// <include file="../docs/LCH.xml" path='extradoc/class[@name="LCH"]/interfaces/interface[@name="LCHColor"]/*' />
         public static LchSpace ToLch(this Color @this) => new LchSpace(@this);
 
         /// <include file="../docs/LUV.xml" path='extradoc/class[@name="LUV"]/interfaces/interface[@name="LUVColor"]/*' />
-        public static LuvSpace ToLov(this Color @this, bool precisionD65 = false) => new LuvSpace(@this, precisionD65);
+        public static LuvSpace ToLov(this Color @this) => new LuvSpace(@this);
 
         /// <include file="../docs/XYZ.xml" path='extradoc/class[@name="XYZ"]/interfaces/interface[@name="XYZColor"]/*' />
         public static XyzSpace ToXyz(this Color @this) => new XyzSpace(@this);

@@ -25,6 +25,17 @@
 								<returns></returns>
 						</interface>
 				</interfaces>
+				<methods>
+						<method name="AdaptXyz">
+								<summary>
+										Performs chromatic adaptation on an XYZ color from a source illuminant to a destination illuminant using the Bradford (von Kries) method.<br/>
+										<paramref name="xyz"/> - The source XYZ color.<br/>
+										<paramref name="sourceWhite"/> - The source illuminant (e.g., Common.D65).<br/>
+										<paramref name="destWhite"/> - The destination illuminant (e.g., Common.D50).<br/>
+								</summary>
+								<returns>A new XyzSpace color adapted to the new illuminant.</returns>
+						</method>
+				</methods>
 				<properties>
 						<property name="X">
 								<summary>

@@ -33,8 +33,6 @@ namespace Chizl.ColorExtension
 
             if (!this.IsEmpty)
             {
-                Color evalColor = clr.A < 255 ? Color.FromArgb(clr.R, clr.G, clr.B) : clr;
-
                 double r = clr.R / 255.0;
                 double g = clr.G / 255.0;
                 double b = clr.B / 255.0;

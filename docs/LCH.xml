@@ -39,5 +39,19 @@
 								<returns></returns>
 						</interface>
 				</interfaces>
+				<methods>
+						<method name="GetDeltaE2000">
+								<summary>
+										Calculates the perceptual difference between two LCH colors using the "CIEDE2000" formula.<br/>
+										This is the industry-standard, most accurate formula for human-perceived color difference.<br/>
+										<paramref name="lch1"/> - The first LchSpace color.<br/>
+										<paramref name="lch2"/> - The second LchSpace color.<br/>
+										<paramref name="kL"/> - Parametric factor for Lightness (defaults to 1.0).<br/>
+										<paramref name="kC"/> - Parametric factor for Chroma (defaults to 1.0).<br/>
+										<paramref name="kH"/> - Parametric factor for Hue (defaults to 1.0).<br/>
+								</summary>
+								<returns>A distance value. &lt; 1.0 is imperceptible, &gt; 10.0 is a different color.</returns>
+						</method>
+				</methods>
 		</class>
 </extradoc>

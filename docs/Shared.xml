@@ -52,10 +52,8 @@
 						</property>
 						<property name="Tint">
 								<summary>
-										Returns a tinted version of the original color (mixed with white).
-										<code>
-												<paramref name="percentage"/> - Amount to tint, from 0 to 100
-										</code>
+										Returns a tinted version of the original color (mixed with white).<br/>
+										<paramref name="percentage"/> - Amount to tint, from 0 to 100
 								</summary>
 								<returns>
 										(Color) - Tinted color
@@ -63,10 +61,8 @@
 						</property>
 						<property name="Shade">
 								<summary>
-										Returns a shaded version of the original color (mixed with black).
-										<code>
-												<paramref name="percentage"/> - Amount to shade, from 0 to 100.
-										</code>
+										Returns a shaded version of the original color (mixed with black).<br/>
+										<paramref name="percentage"/> - Amount to shade, from 0 to 100.
 								</summary>
 								<returns>
 										(Color) - Shaded color
@@ -144,11 +140,9 @@
 						<property name="ToHSV">
 								<summary>
 										Gets the Contrast color of existing color based on threashhold<br/>
-										<code>
-												<paramref name="bestContrastColor"/> - "out double hue" arguement of a new contrast color.<br/>
-												<paramref name="contrastRatio"/> - "out double saturation" arguement with ratio used between original color and the contrast color.<br/>
-												<paramref name="minThreshold"/> - "out double value" arguement to set the minimum threashold that should be used.<br/>
-										</code>
+										<paramref name="bestContrastColor"/> - "out double hue" arguement of a new contrast color.<br/>
+										<paramref name="contrastRatio"/> - "out double saturation" arguement with ratio used between original color and the contrast color.<br/>
+										<paramref name="minThreshold"/> - "out double value" arguement to set the minimum threashold that should be used.<br/>
 								</summary>
 								<returns></returns>
 						</property>
@@ -163,11 +157,9 @@
 						<property name="Contrast">
 								<summary>
 										Gets the Contrast color of existing color based on threashhold<br/>
-										<code>
-												<paramref name="bestContrastColor"/> - "out Color" arguement of a new contrast color.<br/>
-												<paramref name="contrastRatio"/> - "out double" arguement with ratio used between original color and the contrast color.<br/>
-												<paramref name="minThreshold"/> - "double" (Optional) arguement to set the minimum threashold that should be used.<br/>
-										</code>
+										<paramref name="bestContrastColor"/> - "out Color" arguement of a new contrast color.<br/>
+										<paramref name="contrastRatio"/> - "out double" arguement with ratio used between original color and the contrast color.<br/>
+										<paramref name="minThreshold"/> - "double" (Optional) arguement to set the minimum threashold that should be used.<br/>
 								</summary>
 								<returns>
 										(Color) - The complementary color of existing color object.
@@ -177,13 +169,11 @@
 								<summary>
 										Determines if a color is considered "dark" based on its luminance, for optimal text readability.<br/><br/>
 										Params:<br/>
-										<code>
-												<paramref name="threshold"/> - A luminance threshold (0.0 to 1.0) to distinguish between dark and light colors.<br/>
-												Lower values mean the color must be very dark to return true.<br/>
-												A common starting point is 0.5.<br/>
-												For improved visual contrast, values between 0.45 and 0.6 are often effective.<br/>
-												(Note: WCAG guidelines use a different calculation for contrast ratio, not a simple luminance threshold.)
-										</code>
+										<paramref name="threshold"/> - A luminance threshold (0.0 to 1.0) to distinguish between dark and light colors.<br/>
+										- Lower values mean the color must be very dark to return true.<br/>
+										- A common starting point is 0.5.<br/>
+										- For improved visual contrast, values between 0.45 and 0.6 are often effective.<br/>
+										- (Note: WCAG guidelines use a different calculation for contrast ratio, not a simple luminance threshold.)
 								</summary>
 								<returns>
 										(bool) - True if the color's luminance is below the threshold, indicating it is dark; otherwise, false.
@@ -193,13 +183,11 @@
 								<summary>
 										Determines if a color is considered "light" based on its luminance, for optimal text readability.<br/><br/>
 										Params:<br/>
-										<code>
-												<paramref name="threshold"/> - A luminance threshold (0.0 to 1.0) to distinguish between dark and light colors.<br/>
-												Higher values mean the color must be lighter to return true.<br/>
-												A common starting point is 0.5.<br/>
-												For improved visual contrast, values between 0.45 and 0.6 are often effective.<br/>
-												(Note: WCAG guidelines use a different calculation for contrast ratio, not a simple luminance threshold)
-										</code>
+										<paramref name="threshold"/> - A luminance threshold (0.0 to 1.0) to distinguish between dark and light colors.<br/>
+										- Higher values mean the color must be lighter to return true.<br/>
+										- A common starting point is 0.5.<br/>
+										- For improved visual contrast, values between 0.45 and 0.6 are often effective.<br/>
+										- (Note: WCAG guidelines use a different calculation for contrast ratio, not a simple luminance threshold)
 								</summary>
 								<returns>
 										(bool) - True if the color's luminance is above the threshold, indicating it is light; otherwise, false.
