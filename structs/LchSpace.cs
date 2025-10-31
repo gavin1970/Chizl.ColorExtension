@@ -182,8 +182,8 @@ namespace Chizl.ColorExtension
 
         #region Public Override Methods
         public override bool Equals(object obj) => obj is LchSpace other && this.ValueString.Equals(other.ValueString);
-        public override int GetHashCode() => base.GetHashCode();
-        public override string ToString() => base.ToString();
+        public override int GetHashCode() => this.ValueString.GetHashCode();
+        public override string ToString() => this.ValueString;
         #endregion
     }
 }
