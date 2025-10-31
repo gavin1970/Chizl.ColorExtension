@@ -61,7 +61,8 @@ namespace Chizl.ColorExtension
         public static T SetBoundary<T>(this T value, T min, T max, byte decCount = 0) where T : IComparable<T>
         {
             if (!IsSupportedNumeric<T>())
-                throw new NotSupportedException($"{typeof(T).Name} is not a supported numeric type.");
+                throw new NotSupportedException($"'{typeof(T).Name}' is not a supported numeric type.\n" +
+                                                $"Supported types: ({string.Join(", ", _validBoundaryTypes.Select(s=>s.Name))})");
 
             //if this return type doesn't have decimal values, and decCount is greater than 0, set to 0;
             if (decCount > 0 && _decimalTypes.Where(w => w.Name.Equals(typeof(T).Name)).Count().Equals(0))

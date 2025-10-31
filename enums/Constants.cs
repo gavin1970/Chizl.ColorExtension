@@ -17,7 +17,11 @@ namespace Chizl.ColorExtension
         /// <summary>
         /// Passes for all text sizes (normal and large).
         /// </summary>
-        AllText
+        AAALevel,
+        /// <summary>
+        /// Passes for all text sizes (normal and large).
+        /// </summary>
+        AALevel
     }
 
     public enum ToneCategory

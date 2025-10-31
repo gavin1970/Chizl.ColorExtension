@@ -42,32 +42,45 @@ namespace Chizl.ColorExtension
             return contrastRatio >= minThreshold;
         }
 
+        /// <summary>
+        /// Returns the relative luminance of a color (0–1).
+        /// </summary>
+        /// <param name="c">Foreground color</param>
+        /// <param name="background">
+        /// (Optional) If foreground color has transparency, pass the solid background color to get the correct luminance<br/>
+        /// Default: null
+        /// </param>
+        /// <returns></returns>
+        public static double RelativeLuminance(Color c, Color? background = null)
+        {
+            if (c.A < 255)
+            {
+                // Blend against background (default white if none)
+                var bg = background ?? Color.White;
+                double alpha = c.A / 255.0;
+                double r = (c.R * alpha) + (bg.R * (1 - alpha));
+                double g = (c.G * alpha) + (bg.G * (1 - alpha));
+                double b = (c.B * alpha) + (bg.B * (1 - alpha));
+                c = Color.FromArgb(255, (int)r.ClampTo(0, 255), (int)g.ClampTo(0, 255), (int)b.ClampTo(0, 255));
+            }
+
+            double R = ChannelLuminance(c.R);
+            double G = ChannelLuminance(c.G);
+            double B = ChannelLuminance(c.B);
+            return 0.2126 * R + 0.7152 * G + 0.0722 * B;
+        }
+
         public static ContrastPassLevel GetContrastLevel(Color background, out Color bestContrastColor, out double contrastRatio)
         {
-            double bgLuminance = RelativeLuminance(background);
-
-            double contrastWithWhite = ContrastRatio(bgLuminance, 1.0);
-            double contrastWithBlack = ContrastRatio(bgLuminance, 0.0);
-
-            if (contrastWithWhite > contrastWithBlack)
-            {
-                bestContrastColor = Color.White;
-                contrastRatio = contrastWithWhite;
-            }
-            else
-            {
-                bestContrastColor = Color.Black;
-                contrastRatio = contrastWithBlack;
-            }
+            GetContrast(background, out bestContrastColor, out contrastRatio);
 
             if (contrastRatio >= 7.0)
-                return ContrastPassLevel.AllText;
-            else if (contrastRatio >= 4.5)
-                return ContrastPassLevel.AllText;
-            else if (contrastRatio >= 3.0)
+                return ContrastPassLevel.AAALevel;
+            if (contrastRatio >= 4.5)
+                return ContrastPassLevel.AALevel;
+            if (contrastRatio >= 3.0)
                 return ContrastPassLevel.LargeTextOnly;
-            else
-                return ContrastPassLevel.None;
+            return ContrastPassLevel.None;
         }
 
         /// <summary>
@@ -78,17 +91,6 @@ namespace Chizl.ColorExtension
             double L1 = Math.Max(lum1, lum2);
             double L2 = Math.Min(lum1, lum2);
             return (L1 + 0.05) / (L2 + 0.05);
-        }
-
-        /// <summary>
-        /// Returns the relative luminance of a color (0–1).
-        /// </summary>
-        private static double RelativeLuminance(Color c)
-        {
-            double R = ChannelLuminance(c.R);
-            double G = ChannelLuminance(c.G);
-            double B = ChannelLuminance(c.B);
-            return 0.2126 * R + 0.7152 * G + 0.0722 * B;
         }
 
         /// <summary>

@@ -28,12 +28,12 @@ namespace NET8Demo
             var windowFgColor = Color.White;
             var exitKey = ConsoleKey.Escape;
 
-            var c = Color.White; // Pure Red
+            var c = Color.Red;
             var c2 = Color.FromArgb(c.ToArgb());
             Console.WriteLine($"{c}\t: {c2}");
-            Console.WriteLine($"Complementary\t: {c.GetComplementary()}");
             if (c.GetContrast(out Color bestColor, out double ratio))
                 Console.WriteLine($"Contrast\t: {bestColor} (Ratio: {ratio:0.000}:1)");
+            Console.WriteLine($"Complementary\t: {c.GetComplementary()}");
 
             ReadKey();
 
