@@ -17,8 +17,8 @@
 				<ApplicationIcon>docs\ChizlColorExtension.ico</ApplicationIcon>
 				<Copyright>© 2025 color.dev</Copyright>
 				<PackageTags>4bit;8bit;24bit;color;bit-level-convertion;ascii-escape;console-window;desktop-window;netstandard2.0;netstandard2.1;net47;net48;net6.0;net8.0;net9.0;no-external-dependancies</PackageTags>
-				<FileVersion>5.10.29.1718</FileVersion>
-				<Version>5.10.29.0</Version>
+				<FileVersion>5.10.31.2200</FileVersion>
+				<Version>5.10.31.0</Version>
 				<AssemblyVersion>5.10.0.0</AssemblyVersion>
 				<NuGetAuditMode>all</NuGetAuditMode>
 				<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
