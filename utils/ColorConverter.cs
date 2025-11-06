@@ -212,7 +212,7 @@ namespace Chizl.ColorExtension
             byte blue = (byte)Math.Round(Math.Max(0, Math.Min(255, (b + m) * 255)));
             byte green = (byte)Math.Round(Math.Max(0, Math.Min(255, (g + m) * 255)));
 
-            return Color.FromArgb(red, blue, green);
+            return Color.FromArgb(red, green, blue);
         }
         #endregion
 

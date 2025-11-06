@@ -400,13 +400,13 @@ namespace Chizl.ColorExtension
         public static Color GetComplementary(Color clr)
         {
             //get HSB / HSV information from color.
-            var hsb = clr.ToHsb();
+            var hsv = clr.ToHsv();
 
             //adjust the hue by 180 degrees
-            double complementaryHue = (hsb.Hue + 180) % 360;
+            double complementaryHue = (hsv.Hue + 180) % 360;
 
             //return the complementary color object
-            return ColorConverterEx.HsvToColor(complementaryHue, hsb.Saturation, hsb.Brightness);
+            return ColorConverterEx.HsvToColor(complementaryHue, hsv.Saturation, hsv.RawValue);
         }
         #endregion
 
