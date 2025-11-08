@@ -42,7 +42,12 @@
 										180°   | Cyan<br/>
 										240°   | Blue<br/>
 										300°   | Magenta<br/>
-										360°   | (Red again)
+										360°   | (Red again)<br/><br/>
+										<b>(4) Depths in a Color Wheel:</b><br/>
+										<li>4. Hue - Most Outside, Pure Color</li><br/>
+										<li>3. Tints - Hue + White</li><br/>
+										<li>2. Tones - Hew + Gray</li><br/>
+										<li>1. Shade - Most Inner, Hue + Black</li>
 								</summary>
 								<returns>
 										(double)<br/>
@@ -52,7 +57,9 @@
 						</property>
 						<property name="Tint">
 								<summary>
-										Returns a tinted version of the original color (mixed with white).<br/>
+										Tint is sometimes also called a Pastel, but to be precise, Color Theory defines a True Tint as any Hue or mixture of pure colors with only White added.
+										- ref: <a href="https://color-wheel-artist.com/hue/">color-wheel-artist.com</a><br/>										
+										A tinted version of the original color (mixed with white).<br/>
 										<paramref name="percentage"/> - Amount to tint, from 0 to 100
 								</summary>
 								<returns>
@@ -61,10 +68,12 @@
 						</property>
 						<property name="Shade">
 								<summary>
-										Returns a shaded version of the original color (mixed with black).<br/>
+										Color Theory defines a True Shade​ as any pure Hue or mixture of pure colors with no white or gray, only Black added. 
+										- ref: <a href="https://color-wheel-artist.com/hue/">color-wheel-artist.com</a><br/>
+										A shaded version of the original color (mixed with black).<br/>
 										<paramref name="percentage"/> - Amount to shade, from 0 to 100.
 								</summary>
-								<returns>
+								<returns>										
 										(Color) - Shaded color
 								</returns>
 						</property>
@@ -97,6 +106,9 @@
 						</property>
 						<property name="Tone">
 								<summary>
+										Color Theory defines a True Tone as any Hue or mixture of pure colors with only Gray added. To be precise, this definition considers Gray as truly neutral. 
+										In other words, there are no additional pigments in the Gray other than White plus Black. - ref: <a href="https://color-wheel-artist.com/hue/">color-wheel-artist.com</a><br/>
+										<br/>
 										Definition: A qualitative description of a color's visual character based on its brightness and saturation.<br/>
 										Interpretation: Tone captures how soft, vivid, dark, or pastel a color appears.<br/>
 										Components:<br/>

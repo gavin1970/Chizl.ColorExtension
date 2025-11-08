@@ -2,18 +2,22 @@
 <extradoc>
 		<class name="HSL">
 				<summary>
-						This class is not an abstract class, but used as one for each internal color class.
-						This is so it can be used internally with an extension "Chizl.ColorExtensions.Info".
-						Info() to be used on Microsoft's Color struct and ConsoleColor enum.<br/>
-						<b>Understand Hue w/ Quotes from:</b> <a href="https://color-wheel-artist.com/hue/">color-wheel-artist.com</a><br/>
-						Tint is sometimes also called a Pastel, but to be precise, Color Theory defines a True Tint as any Hue or mixture of pure colors with only White added.<br/>
-						Color Theory defines a True Tone as any Hue or mixture of pure colors with only Gray added. To be precise, this definition considers Gray as truly neutral.<br/>
-						Color Theory defines a True Shade​ as any pure Hue or mixture of pure colors with only Black added. In other words, it contains absolutely no White or Gray.<br/>
-						<b>(4) Depths in a Color Wheel:</b><br/>
-						<li>4. Hue - Most Outside, Pure Color</li><br/>
-						<li>3. Tints - Hue + White</li><br/>
-						<li>2. Tones - Hew + Gray</li><br/>
-						<li>1. Shade - Most Inner, Hue + Black</li>
+						Defines a color using the HSL (Hue, Saturation, Lightness) color model.<br/>
+						HSL is a cylindrical-coordinate representation of the RGB color space designed to be more intuitive for human perception than RGB.<br/>
+						<br/>
+						Components:<br/>
+						- <b>Hue (H):</b> The type of color (e.g., red, green) on a 0-360° wheel.<br/>
+						- <b>Saturation (S):</b> The "purity" or intensity of the color (0-100%).<br/>
+						- <b>Lightness (L):</b> The "brightness" or "luminance" of the color (0-100%).<br/>
+						<br/>
+						Interpretation:<br/>
+						HSL's primary advantage is its symmetrical Lightness scale, which aligns with the artistic concepts of tints (adding white) and shades (adding black).<br/>
+						- <b>Lightness = 0%:</b> Always results in black.<br/>
+						- <b>Lightness = 50%:</b> Represents the "purest," most saturated version of the hue.<br/>
+						- <b>Lightness = 100%:</b> Always results in white.<br/>
+						- <b>Saturation = 0%:</b> Results in a shade of gray (from black to white, determined by Lightness).<br/>
+						<br/>
+						This model is ideal for creating color palettes by adjusting Lightness to generate predictable tints and shades, or by adjusting Saturation to create tones.
 				</summary>
 				<returns></returns>
 				<interfaces>
