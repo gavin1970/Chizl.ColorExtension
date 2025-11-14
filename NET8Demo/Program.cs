@@ -28,22 +28,21 @@ namespace NET8Demo
             var windowFgColor = Color.White;
             var exitKey = ConsoleKey.Escape;
 
-            var colorArray = new Color[] { Color.Red, Color.SpringGreen, Color.DarkBlue, Color.White, Color.Black };
+            var colorArray = new Color[] { Color.FromArgb(0, 255, 255), Color.Red, Color.SpringGreen, Color.DarkBlue, Color.White, Color.Black };
             //var colorArray = new Color[] { Color.DarkBlue };
             foreach (var c in colorArray)
             {
                 var c2 = Color.FromArgb(c.ToArgb());
                 var tab = $"{c}".Length >= 16 ? "" : "\t";  //check if extra tab needed after color name shown.
 
-                //var m_bg = c == Color.Black ? Color.White.BGAscii() : c == Color.White ? Color.Black.BGAscii() : c.IsDark() ? Color.White.BGAscii() : Color.Black.BGAscii();
-                //var c_bg = c == Color.Black ? Color.White.BGAscii() : c == Color.White ? Color.Black.BGAscii() : c.GetComplementary().IsDark() ? Color.White.BGAscii() : Color.Black.BGAscii();
                 var m_bg = c == Color.Black ? Color.White.BGAscii() : c == Color.White ? Color.Black.BGAscii() : c.GetComplementary().BGAscii();
                 var c_bg = c == Color.Black ? Color.White.BGAscii() : c == Color.White ? Color.Black.BGAscii() : c.BGAscii();
 
                 Console.WriteLine($"{m_bg}{c.FGAscii()}{c}\t{tab}: {c2}{c.ResetAscii()}");
                 if (c.GetContrast(out Color bestColor, out double ratio))
                     Console.WriteLine($"Contrast\t\t: {bestColor} (Ratio: {ratio:0.000}:1)");
-                Console.WriteLine($"{c_bg}{c.GetComplementary().FGAscii()}Complementary\t\t: {c.GetComplementary()}{c.ResetAscii()}\n------------");
+                Console.WriteLine($"{c_bg}{c.GetComplementary().FGAscii()}Complementary\t\t: {c.GetComplementary()}{c.ResetAscii()}");
+                Console.WriteLine($"HSV: {c2.ToHsv()}\nHSL: {c2.ToHsl()}\n------------");
             }
             //var c = Color.SpringGreen;
 
